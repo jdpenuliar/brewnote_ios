@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ClerkKit
 
 @main
 struct brewnoteApp: App {
+    init() {
+        Clerk.configure(publishableKey: Env.clerkPublishableKey)
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(Clerk.shared)
         }
     }
 }

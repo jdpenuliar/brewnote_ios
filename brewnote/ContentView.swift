@@ -6,16 +6,31 @@
 //
 
 import SwiftUI
+import Combine
+import ConvexMobile
 
 struct ContentView: View {
+    @State private var authState: AuthState<String> = .loading
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Brewnote")
+        Group {
+            switch authState {
+            case .loading:
+                ProgressView("Loading...")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            case .unauthenticated:
+                SignInView()
+
+            case .authenticated:
+                MainTabView()
+            }
         }
-        .padding()
+        .task {
+            for await state in convexClient.authState.values {
+                authState = state
+            }
+        }
     }
 }
 
