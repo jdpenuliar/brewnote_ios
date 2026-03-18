@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0FD70DE62F6A489C0087D31A /* ClerkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD70DE52F6A489C0087D31A /* ClerkKit */; };
+		0FD70DE82F6A489C0087D31A /* ClerkKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD70DE72F6A489C0087D31A /* ClerkKitUI */; };
+		0FD70DEB2F6A49400087D31A /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD70DEA2F6A49400087D31A /* ConvexMobile */; };
+		0FD70DEF2F6A4C950087D31A /* ClerkConvex in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD70DEE2F6A4C950087D31A /* ClerkConvex */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0F3D13782F6A04D300ECCA6E /* brewnote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brewnote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD70DE62F6A489C0087D31A /* ClerkKit in Frameworks */,
+				0FD70DE82F6A489C0087D31A /* ClerkKitUI in Frameworks */,
+				0FD70DEB2F6A49400087D31A /* ConvexMobile in Frameworks */,
+				0FD70DEF2F6A4C950087D31A /* ClerkConvex in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +76,10 @@
 			);
 			name = brewnote;
 			packageProductDependencies = (
+				0FD70DE52F6A489C0087D31A /* ClerkKit */,
+				0FD70DE72F6A489C0087D31A /* ClerkKitUI */,
+				0FD70DEA2F6A49400087D31A /* ConvexMobile */,
+				0FD70DEE2F6A4C950087D31A /* ClerkConvex */,
 			);
 			productName = brewnote;
 			productReference = 0F3D13782F6A04D300ECCA6E /* brewnote.app */;
@@ -94,6 +109,11 @@
 			);
 			mainGroup = 0F3D136F2F6A04D300ECCA6E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0FD70DE42F6A489C0087D31A /* XCRemoteSwiftPackageReference "clerk-ios" */,
+				0FD70DE92F6A49400087D31A /* XCRemoteSwiftPackageReference "convex-swift" */,
+				0FD70DED2F6A4C950087D31A /* XCRemoteSwiftPackageReference "clerk-convex-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0F3D13792F6A04D300ECCA6E /* Products */;
 			projectDirPath = "";
@@ -249,6 +269,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = brewnote/brewnote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -280,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = brewnote/brewnote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -328,6 +350,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FD70DE42F6A489C0087D31A /* XCRemoteSwiftPackageReference "clerk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/clerk/clerk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+		0FD70DE92F6A49400087D31A /* XCRemoteSwiftPackageReference "convex-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/get-convex/convex-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+		0FD70DED2F6A4C950087D31A /* XCRemoteSwiftPackageReference "clerk-convex-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/clerk/clerk-convex-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FD70DE52F6A489C0087D31A /* ClerkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD70DE42F6A489C0087D31A /* XCRemoteSwiftPackageReference "clerk-ios" */;
+			productName = ClerkKit;
+		};
+		0FD70DE72F6A489C0087D31A /* ClerkKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD70DE42F6A489C0087D31A /* XCRemoteSwiftPackageReference "clerk-ios" */;
+			productName = ClerkKitUI;
+		};
+		0FD70DEA2F6A49400087D31A /* ConvexMobile */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD70DE92F6A49400087D31A /* XCRemoteSwiftPackageReference "convex-swift" */;
+			productName = ConvexMobile;
+		};
+		0FD70DEE2F6A4C950087D31A /* ClerkConvex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD70DED2F6A4C950087D31A /* XCRemoteSwiftPackageReference "clerk-convex-swift" */;
+			productName = ClerkConvex;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0F3D13702F6A04D300ECCA6E /* Project object */;
 }
