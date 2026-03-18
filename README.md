@@ -119,3 +119,27 @@ iOS version of brewnote calling convex
   - Check if Clerk has an official iOS SDK first — if not, you'll implement the auth flow via ASWebAuthenticationSession and manage the JWT manually
   - The Convex HTTP API path format (brews:getRecentBrews) is what matters — confirm this matches exactly with your Convex deployment by testing one call with curl first
   - The beanNotes table exists in the schema but isn't wired up in the frontend yet, so skip it for v1
+
+
+# Folder structure
+brewnote/
+  brewnoteApp.swift          -- Clerk SDK init + environment setup
+  ContentView.swift          -- Auth state router (loading/sign-in/main app)
+  Env.swift                  -- Config constants (Clerk key, Convex URL)
+  brewnote.entitlements      -- Associated domains for Clerk
+  App/
+    ConvexClient.swift       -- Global ConvexClientWithAuth instance
+  Models/
+    Bean.swift, BrewNote.swift, Enums.swift
+  Features/
+    Auth/Views/SignInView.swift     -- Login screen with Clerk AuthView
+    Home/Views/HomeView.swift       -- Placeholder
+    Brews/Views/                    -- Placeholders (List, Detail, Form)
+    Beans/Views/                    -- Placeholders (List, Detail, Form)
+    Profile/Views/ProfileView.swift -- Placeholder
+  Navigation/
+    MainTabView.swift        -- Tab bar (Home, Brews, Beans, Profile)
+  Shared/
+    Theme/AppTheme.swift     -- Coffee brown color constant
+    Components/              -- Empty (for reusable UI)
+    Extensions/              -- Empty (for Swift extensions)
